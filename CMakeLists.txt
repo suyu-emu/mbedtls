@@ -157,6 +157,9 @@ if(CMAKE_COMPILER_IS_IAR)
 endif(CMAKE_COMPILER_IS_IAR)
 
 if(CMAKE_COMPILER_IS_MSVC)
+    # Compile with UTF-8 encoding (REMOVE THIS COMMIT ONCE A FIX IS DEPLOYED UPSTREAM)
+    add_compile_options(/utf-8)
+
     # Strictest warnings, and treat as errors
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /W3")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /WX")
